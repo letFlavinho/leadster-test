@@ -4,6 +4,8 @@ import Image from "next/image";
 import LeadLogo from "src/public/logo.png";
 import { Logo } from "../components/Logo";
 import { Button } from "@/components/Button";
+import { Card } from "@/components/Card";
+import Thumbnail from "src/public/thumbnail.png";
 import AssetHeader from "src/public/asset-header.png";
 import { Plus_Jakarta_Sans } from "next/font/google";
 
@@ -65,7 +67,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const Classes = styled.div`
+const Videos = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -86,8 +88,15 @@ const Section = styled.div`
 const Options = styled.div`
   display: flex;
   border-bottom: 1px solid #e5e5e5;
+  background: #f0f8ff;
+`;
+
+const Classes = styled.div`
+  display: flex;
   padding: 8rem 5rem;
   background: #f0f8ff;
+  justify-content: space-between;
+  flex-wrap: wrap;
 `;
 
 export default function Home() {
@@ -115,7 +124,7 @@ export default function Home() {
           seu negócio
         </h3>
       </Section>
-      <Classes>
+      <Videos>
         <Options>
           <Button product="Agências" />
           <Button product="Chatbot" />
@@ -123,8 +132,25 @@ export default function Home() {
           <Button product="Geração de Leads" />
           <Button product="Mídia Paga" />
         </Options>
-        <></>
-      </Classes>
+        <Classes>
+          <Card src={Thumbnail} width={362} height={204} alt={"thumb"} />
+          <Card src={Thumbnail} width={362} height={204} alt={"thumb"} />
+          <Card src={Thumbnail} width={362} height={204} alt={"thumb"} />
+          <Card src={Thumbnail} width={362} height={204} alt={"thumb"} />
+          <Card src={Thumbnail} width={362} height={204} alt={"thumb"} />
+          <Card src={Thumbnail} width={362} height={204} alt={"thumb"} />
+          <Card src={Thumbnail} width={362} height={204} alt={"thumb"} />
+          <Card src={Thumbnail} width={362} height={204} alt={"thumb"} />
+          <Card src={Thumbnail} width={362} height={204} alt={"thumb"} />
+        </Classes>
+        <>
+          <h4>Página</h4>
+          <Button product="1"></Button>
+        </>
+      </Videos>
+      <></>
+
+      <></>
     </main>
   );
 }

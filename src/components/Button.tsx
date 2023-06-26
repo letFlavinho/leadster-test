@@ -6,7 +6,7 @@ const Jakarta = Plus_Jakarta_Sans({
 });
 
 type ButtonType = {
-  product: string;
+  product: string | number;
 };
 
 const LeadButton = styled.button`
