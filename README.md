@@ -1,34 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Olá, me chamo Flávio Bulhões. Sou desenvolvedor especializado em front-end, aqui irei comentar os passos por trás do conjunto do projeto envolvendo o teste de front end da vaga, isso será extremamente válido para meu aprendizado, agregará muito no meu futuro. Então...
 
-## Getting Started
+```
+     npx create-next-app@latest
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Este comando é a coisa mais eficiente da criação do projeto Next, Next é uma biblioteca de React, junto com este comando já posso configurar muitas coisas como ESLint, TypeScript e mais, muito rápido já trás tudo que eu preciso, a pasta app para otimizar o sistema de rotas no projeto, podia até ter colocado logo um TailWind fácil, mas nesse projeto vamos usar o Styled Components, é isso mesmo que eu vou colocar agora no projeto.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+     npm install styled-components@5.3.10 @types/styled-components
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
 
-## Learn More
+Precisei rodar este comando para instalar no meu projeto com TypeScript os tipos do styled-components junto com o mesmo. Agora dá para fazer tudo que eu preciso sem nenhum possível erro envolvendo styled components com typescript. Agora eu sigo criando os itens dos quais vão ser reaproveitados com um possível segmento do projeto, na pasta components estes se encontrarão.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Aqui tenho duas opções, posso usar inclusive as duas ao mesmo tempo. Como o produto consiste em uma single page, ou seja, uma página será o suficiente para as funcionalidades do projeto, então posso começar a fazer tudo de uma vez num só arquivo tsx e depois fragmentar as sessões da página, transformando-as em componentes, como também posso fazer o contrário, fazendo os componentes antes e encaixando na página depois, não tem problema, a ordem dos fatores não altera o resultado. O importante é que a parte visual é feita primeiro com o objetivo de no momento da tratativa de dados, funcionar independente do visual, pois a lógica já estará estabelecida na hora que eu fizer.
