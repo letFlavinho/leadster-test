@@ -8,7 +8,7 @@ const Section = styled.div`
   flex-direction: column;
   padding: 8rem 5rem;
   height: 35vh;
-  background: #f0f8ff;
+  background: #833434;
 `;
 
 export function Banner(props: any) {

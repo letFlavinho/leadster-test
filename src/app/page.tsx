@@ -2,9 +2,9 @@
 import styled, { createGlobalStyle } from "styled-components";
 import Image from "next/image";
 import LeadLogo from "src/public/logo.png";
-import { Logo } from "../components/Logo";
-import { Button } from "@/components/Button";
-import { Card } from "@/components/Card";
+import { Logo } from "../Components/Logo";
+import { Button } from "@/Components/Button";
+import { Card } from "@/Components/Card";
 import Thumbnail from "src/public/thumbnail.png";
 import AssetHeader from "src/public/asset-header.png";
 import { Plus_Jakarta_Sans } from "next/font/google";
@@ -26,6 +26,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
   }
   
   .bigger-text {
@@ -69,17 +70,14 @@ const GlobalStyle = createGlobalStyle`
 
 const Videos = styled.div`
   display: flex;
-  align-items: center;
   flex-direction: column;
-  width: 60vw;
+  max-width: 80vw;
   margin: 0 auto;
-  background: #f0f0f0;
 `;
 
 const Section = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   padding: 8rem 5rem;
   height: 35vh;
@@ -88,14 +86,13 @@ const Section = styled.div`
 const Options = styled.div`
   display: flex;
   border-bottom: 1px solid #e5e5e5;
-  background: #f0f8ff;
 `;
 
 const Classes = styled.div`
   display: flex;
-  padding: 8rem 5rem;
-  background: #f0f8ff;
-  justify-content: space-between;
+  padding: 2em 5rem;
+
+  justify-content: center;
   flex-wrap: wrap;
 `;
 
@@ -133,15 +130,15 @@ export default function Home() {
           <Button product="Mídia Paga" />
         </Options>
         <Classes>
-          <Card src={Thumbnail} width={362} height={204} alt={"thumb"} />
-          <Card src={Thumbnail} width={362} height={204} alt={"thumb"} />
-          <Card src={Thumbnail} width={362} height={204} alt={"thumb"} />
-          <Card src={Thumbnail} width={362} height={204} alt={"thumb"} />
-          <Card src={Thumbnail} width={362} height={204} alt={"thumb"} />
-          <Card src={Thumbnail} width={362} height={204} alt={"thumb"} />
-          <Card src={Thumbnail} width={362} height={204} alt={"thumb"} />
-          <Card src={Thumbnail} width={362} height={204} alt={"thumb"} />
-          <Card src={Thumbnail} width={362} height={204} alt={"thumb"} />
+          <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
+          <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
+          <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
+          <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
+          <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
+          <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
+          <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
+          <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
+          <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
         </Classes>
         <>
           <h4>Página</h4>

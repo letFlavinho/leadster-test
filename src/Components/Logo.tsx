@@ -6,6 +6,4 @@ export const Logo = styled.div`
   align-items: center;
   flex-direction: column;
   background-color: white;
-  
-  }
 `;
