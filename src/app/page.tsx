@@ -3,11 +3,15 @@ import styled, { createGlobalStyle } from "styled-components";
 import Image from "next/image";
 import LeadLogo from "src/public/logo.png";
 import { Logo } from "../Components/Logo";
-import { Button } from "@/Components/Button";
+import { AnimButton } from "@/Components/AnimButton";
 import { Card } from "@/Components/Card";
 import Thumbnail from "src/public/thumbnail.png";
 import AssetHeader from "src/public/asset-header.png";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import Comparativo from "src/public/comparativo_img_CTA.png";
+import { Comparation } from "@/Components/Comparation";
+import { SquareButton } from "@/Components/SquareButton";
+import { MainSection } from "@/Components/MainSection";
 
 const Jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -15,56 +19,11 @@ const Jakarta = Plus_Jakarta_Sans({
 });
 
 const GlobalStyle = createGlobalStyle`
-  Button:hover{
-    color: #2c83fb;
-    border-color: #2c83fb;
-  }
-  Button:active{
-    background-color:#2c83fb;
-    color: white;
-  }
+  
   body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  .bigger-text {
-    display: flex;
-  }
-  .asset-bigger-text {
-    position: relative;
-    right: 1.8rem;
-    top: 0.6rem;
-  }
-
-  span {
-    background-color: white;
-    padding: 0.2rem 1.3rem;
-    border: 2px solid #2c83fb;
-    border-radius: 2rem 2rem 2rem 0;
-    color: #2c83fb;
-    font-weight: bold;
-    font-size: 0.8rem;
-  }
-  h1 {
-    font-size: 5rem;
-    background: linear-gradient(to right, #2c83fb, #1f76f0);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    margin: 0;
-  }
-  h2 {
-    font-weight: 400;
-    font-size: 2.5rem;
-    margin: 0;
-    margin-top: 1rem;
-    color: #4B6170;
-  }
-  h3 {
-    border-top: 1px solid #e5e5e5;
-    padding-top: 1rem;
-    font-weight: 400;
   }
 `;
 
@@ -75,25 +34,30 @@ const Videos = styled.div`
   margin: 0 auto;
 `;
 
-const Section = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 8rem 5rem;
-  height: 35vh;
-  background: #f0f8ff;
-`;
-const Options = styled.div`
-  display: flex;
-  border-bottom: 1px solid #e5e5e5;
-`;
-
 const Classes = styled.div`
   display: flex;
   padding: 2em 5rem;
-
   justify-content: center;
   flex-wrap: wrap;
+`;
+
+const Options = styled.div`
+  display: flex;
+  border-bottom: 1px solid #e5e5e5;
+  justify-content: space-between;
+`;
+
+const Filter = styled.div`
+  float: right;
+`;
+
+const Types = styled.div`
+  float: left;
+`;
+const Pagination = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export default function Home() {
@@ -103,31 +67,24 @@ export default function Home() {
       <Logo>
         <Image src={LeadLogo} width={192} height={42} alt="logo" />
       </Logo>
-      <Section>
-        <span>WEBINARS EXCLUSIVOS</span>
-        <h2>Menos conversinha,</h2>
-        <div className="bigger-text">
-          <h1>Mais Conversão</h1>
-          <Image
-            className="asset-bigger-text"
-            src={AssetHeader}
-            width={49}
-            height={32}
-            alt="asset-header"
-          />
-        </div>
-        <h3>
-          Conheça as estratégias que <b>mudaram o jogo</b> e como aplicá-las no
-          seu negócio
-        </h3>
-      </Section>
+      <MainSection src={AssetHeader} />
       <Videos>
         <Options>
-          <Button product="Agências" />
-          <Button product="Chatbot" />
-          <Button product="Marketing Digital" />
-          <Button product="Geração de Leads" />
-          <Button product="Mídia Paga" />
+          <Types>
+            <AnimButton backgroundColor={"white"} product="Agências" />
+            <AnimButton backgroundColor={"white"} product="Chatbot" />
+            <AnimButton backgroundColor={"white"} product="Marketing Digital" />
+            <AnimButton backgroundColor={"white"} product="Geração de Leads" />
+            <AnimButton backgroundColor={"white"} product="Mídia Paga" />
+          </Types>
+          <Filter>
+            <select id="cars">
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="opel">Opel</option>
+              <option value="audi">Audi</option>
+            </select>
+          </Filter>
         </Options>
         <Classes>
           <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
@@ -140,14 +97,12 @@ export default function Home() {
           <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
           <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
         </Classes>
-        <>
+        <Pagination>
           <h4>Página</h4>
-          <Button product="1"></Button>
-        </>
+          <SquareButton backgroundColor={"white"} product="1"></SquareButton>
+        </Pagination>
       </Videos>
-      <></>
-
-      <></>
+      <Comparation image={Comparativo}></Comparation>
     </main>
   );
 }
