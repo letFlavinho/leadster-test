@@ -16,9 +16,11 @@ const SquaredButton = styled.button<ButtonType>`
   background-color: ${(props) =>
     props.backgroundColor ? props.backgroundColor : "white"};
   padding: 0.3rem 0.7rem;
+  margin: 0 1rem;
   text-align: center;
+  font-weight: 600;
   vertical-align: middle;
-  hover {
+  :hover {
     color: #2c83fb;
     border-color: #2c83fb;
   }

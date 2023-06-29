@@ -28,8 +28,7 @@ const Feedback = styled.div`
     color: white;
     border-radius: 2rem;
     padding: 1rem 2rem;
-    font-weight: 400;
-    border: none;
+    font-weight: 600;
     text-align: center;
     text-decoration: none;
     white-space: nowrap;
@@ -49,30 +48,35 @@ const Feedback = styled.div`
   .selo {
     margin-left: 1rem;
   }
-  .card {
-    border-right: 2px solid #4b6170;
-  }
-  h5 {
-    padding-right: rem;
-    color: #4b6170;
-  }
 `;
 
 const Observations = styled.div`
   display: flex;
+  .card {
+    border-right: 2px solid #4b6170;
+  }
+  .rating {
+    padding-left: 0.8rem;
+  }
+  h5 {
+    text-align: center;
+    color: #4b6170;
+    padding-right: 0.8rem;
+  }
+  .obs-assets {
+    margin-right: 0.2rem;
+  }
 `;
 
 export function Comparation(props: ComparationProps) {
   return (
     <Feedback>
-      <div>
-        <Image
-          src={props.image}
-          width={739}
-          height={687}
-          alt="comparativo"
-        ></Image>
-      </div>
+      <Image
+        src={props.image}
+        width={739}
+        height={687}
+        alt="comparativo"
+      ></Image>
       <aside>
         <div className="top-right">
           <h1>
@@ -97,12 +101,24 @@ export function Comparation(props: ComparationProps) {
         </div>
         <Observations>
           <h5 className="card">
-            <Image src={lilCard} alt="selo-top-10" width={16} height={16} />
+            <Image
+              className="obs-assets"
+              src={lilCard}
+              alt="selo-top-10"
+              width={16}
+              height={16}
+            />
             Não é necessário Cartão de Crédito
           </h5>
 
-          <h5>
-            <Image src={rating} alt="selo-top-10" width={92} height={16} />
+          <h5 className="rating">
+            <Image
+              className="obs-assets"
+              src={rating}
+              alt="selo-top-10"
+              width={92}
+              height={16}
+            />
             4.9/5 média de satisfação
           </h5>
         </Observations>

@@ -16,8 +16,11 @@ const LeadButton = styled.button<ButtonType>`
   background-color: ${(props) =>
     props.backgroundColor ? props.backgroundColor : "white"};
   padding: 0.4rem 2rem;
+  margin: 0 0.4rem;
   text-align: center;
   vertical-align: middle;
+  font-weight: 600;
+  color: #4b6170;
   :hover {
     color: #2c83fb;
     border-color: #2c83fb;

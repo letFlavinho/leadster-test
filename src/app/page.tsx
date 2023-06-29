@@ -12,6 +12,10 @@ import Comparativo from "src/public/comparativo_img_CTA.png";
 import { Comparation } from "@/Components/Comparation";
 import { SquareButton } from "@/Components/SquareButton";
 import { MainSection } from "@/Components/MainSection";
+import { Footer } from "@/Components/Footer";
+import { Options } from "@/Components/Options";
+import { useState, useEffect } from "react";
+import { Loading } from "@/Components/Loading";
 
 const Jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -41,19 +45,6 @@ const Classes = styled.div`
   flex-wrap: wrap;
 `;
 
-const Options = styled.div`
-  display: flex;
-  border-bottom: 1px solid #e5e5e5;
-  justify-content: space-between;
-`;
-
-const Filter = styled.div`
-  float: right;
-`;
-
-const Types = styled.div`
-  float: left;
-`;
 const Pagination = styled.div`
   display: flex;
   align-items: center;
@@ -61,48 +52,52 @@ const Pagination = styled.div`
 `;
 
 export default function Home() {
+  const [showElement, setShowElement] = useState(true);
+
+  useEffect(() => {
+    setTimeout(function () {
+      setShowElement(false);
+    }, 3000);
+  }, []);
+
   return (
-    <main className={Jakarta.className}>
-      <GlobalStyle />
-      <Logo>
-        <Image src={LeadLogo} width={192} height={42} alt="logo" />
-      </Logo>
-      <MainSection src={AssetHeader} />
-      <Videos>
-        <Options>
-          <Types>
-            <AnimButton backgroundColor={"white"} product="Agências" />
-            <AnimButton backgroundColor={"white"} product="Chatbot" />
-            <AnimButton backgroundColor={"white"} product="Marketing Digital" />
-            <AnimButton backgroundColor={"white"} product="Geração de Leads" />
-            <AnimButton backgroundColor={"white"} product="Mídia Paga" />
-          </Types>
-          <Filter>
-            <select id="cars">
-              <option value="volvo">Volvo</option>
-              <option value="saab">Saab</option>
-              <option value="opel">Opel</option>
-              <option value="audi">Audi</option>
-            </select>
-          </Filter>
-        </Options>
-        <Classes>
-          <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
-          <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
-          <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
-          <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
-          <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
-          <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
-          <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
-          <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
-          <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
-        </Classes>
-        <Pagination>
-          <h4>Página</h4>
-          <SquareButton backgroundColor={"white"} product="1"></SquareButton>
-        </Pagination>
-      </Videos>
-      <Comparation image={Comparativo}></Comparation>
-    </main>
+    <div>
+      {showElement ? (
+        <Loading />
+      ) : (
+        <div>
+          <main className={Jakarta.className}>
+            <GlobalStyle />
+            <Logo>
+              <Image src={LeadLogo} width={192} height={42} alt="logo" />
+            </Logo>
+            <MainSection src={AssetHeader} />
+            <Videos>
+              <Options />
+              <Classes>
+                <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
+                <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
+                <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
+                <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
+                <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
+                <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
+                <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
+                <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
+                <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
+              </Classes>
+              <Pagination>
+                <h4>Página</h4>
+                <SquareButton
+                  backgroundColor={"white"}
+                  product="1"
+                ></SquareButton>
+              </Pagination>
+            </Videos>
+            <Comparation image={Comparativo}></Comparation>
+            <Footer />
+          </main>
+        </div>
+      )}
+    </div>
   );
 }
