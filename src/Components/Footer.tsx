@@ -10,11 +10,13 @@ const LeadFooter = styled.div`
   max-width: 80vw;
   margin: 0 auto;
 
-  .table {
+  table {
     display: flex;
     justify-content: space-around;
     margin-bottom: 2rem;
-    /* border-top: 1px solid #e5e5e5; */
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+    }
   }
   .column-links {
     display: flex;
@@ -45,6 +47,9 @@ const LeadFooter = styled.div`
     display: flex;
     justify-content: space-between;
     text-align: center;
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+    }
   }
   h4 {
     font-weight: 500;
@@ -63,7 +68,7 @@ export function Footer() {
         <Image src={LeadLogo} width={192} height={42} alt="logo" />
         <h4>Transformando visitantes em clientes.</h4>
       </Logo>
-      <div className="table">
+      <table>
         <div>
           <h3>Links Principais</h3>
 
@@ -132,7 +137,7 @@ export function Footer() {
             </>
           </ul>
         </div>
-      </div>
+      </table>
 
       <footer>
         <h4>

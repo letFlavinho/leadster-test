@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { AnimButton } from "./AnimButton";
-import { Plus_Jakarta_Sans } from "next/font/google";
 
 const StyledOptions = styled.div`
   display: flex;

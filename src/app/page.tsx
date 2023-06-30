@@ -3,7 +3,6 @@ import styled, { createGlobalStyle } from "styled-components";
 import Image from "next/image";
 import LeadLogo from "src/public/logo.png";
 import { Logo } from "../Components/Logo";
-import { AnimButton } from "@/Components/AnimButton";
 import { Card } from "@/Components/Card";
 import Thumbnail from "src/public/thumbnail.png";
 import AssetHeader from "src/public/asset-header.png";
@@ -28,14 +27,19 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 `;
 
-const Videos = styled.div`
+const Items = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 80vw;
-  margin: 0 auto;
+  margin: 0 10rem;
 `;
 
 const Classes = styled.div`
@@ -72,7 +76,7 @@ export default function Home() {
               <Image src={LeadLogo} width={192} height={42} alt="logo" />
             </Logo>
             <MainSection src={AssetHeader} />
-            <Videos>
+            <Items>
               <Options />
               <Classes>
                 <Card src={Thumbnail} width={177} height={100} alt={"thumb"} />
@@ -92,7 +96,7 @@ export default function Home() {
                   product="1"
                 ></SquareButton>
               </Pagination>
-            </Videos>
+            </Items>
             <Comparation image={Comparativo}></Comparation>
             <Footer />
           </main>

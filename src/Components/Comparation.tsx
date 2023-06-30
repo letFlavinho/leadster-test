@@ -1,11 +1,11 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import styled from "styled-components";
 import seloTop10 from "src/public/selo_RD.png";
 import rating from "src/public/rating.webp";
 import lilCard from "src/public/no-card-dark.webp";
 
 type ComparationProps = {
-  image: any;
+  image: StaticImageData;
 };
 
 const Feedback = styled.div`
@@ -13,11 +13,15 @@ const Feedback = styled.div`
   margin: 0 auto;
   align-items: center;
   justify-content: space-evenly;
-  width: 80vw;
-
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+  }
   h1 {
     color: #4b6170;
     font-weight: 400;
+    @media screen and (max-width: 900px) {
+      font-size: 1rem;
+    }
   }
   h3 {
     color: #4b6170;
@@ -33,9 +37,13 @@ const Feedback = styled.div`
     text-decoration: none;
     white-space: nowrap;
   }
+
   aside {
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: 900px) {
+      align-items: center;
+    }
   }
   .top-right {
     border-bottom: 1px solid #e5e5e5;
@@ -52,6 +60,7 @@ const Feedback = styled.div`
 
 const Observations = styled.div`
   display: flex;
+
   .card {
     border-right: 2px solid #4b6170;
   }
@@ -71,12 +80,14 @@ const Observations = styled.div`
 export function Comparation(props: ComparationProps) {
   return (
     <Feedback>
-      <Image
-        src={props.image}
-        width={739}
-        height={687}
-        alt="comparativo"
-      ></Image>
+      <div>
+        <Image
+          src={props.image}
+          style={{ width: "40vw", height: "fit-content" }}
+          alt="comparativo"
+        ></Image>
+      </div>
+
       <aside>
         <div className="top-right">
           <h1>
@@ -95,8 +106,9 @@ export function Comparation(props: ComparationProps) {
             className="selo"
             src={seloTop10}
             alt="selo-top-10"
-            width={195}
-            height={65}
+            style={{
+              height: "4rem",
+            }}
           />
         </div>
         <Observations>
@@ -105,6 +117,10 @@ export function Comparation(props: ComparationProps) {
               className="obs-assets"
               src={lilCard}
               alt="selo-top-10"
+              style={{
+                width: "1rem",
+                height: "rem",
+              }}
               width={16}
               height={16}
             />
@@ -116,8 +132,7 @@ export function Comparation(props: ComparationProps) {
               className="obs-assets"
               src={rating}
               alt="selo-top-10"
-              width={92}
-              height={16}
+              style={{ width: "3rem", height: "fit-content" }}
             />
             4.9/5 média de satisfação
           </h5>

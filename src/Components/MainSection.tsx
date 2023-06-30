@@ -10,8 +10,8 @@ const MainLeadSection = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 8rem 5rem;
-  height: 35vh;
   background: #f0f8ff;
+  text-align: center;
 
   span {
     background-color: white;
@@ -21,13 +21,21 @@ const MainLeadSection = styled.div`
     color: #2c83fb;
     font-weight: bold;
     font-size: 0.8rem;
+    @media screen and (max-width: 900px) {
+      font-size: 0.6rem;
+    }
   }
   h1 {
+    padding-left: 2rem;
     font-size: 5rem;
     background: linear-gradient(to right, #2c83fb, #1f76f0);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     margin: 0;
+    @media screen and (max-width: 900px) {
+      font-size: 3rem;
+      background-color: black;
+    }
   }
   h2 {
     font-weight: 400;
@@ -35,12 +43,18 @@ const MainLeadSection = styled.div`
     margin: 0;
     margin-top: 1rem;
     color: #4b6170;
+    @media screen and (max-width: 900px) {
+      font-size: 1rem;
+    }
   }
   h3 {
     border-top: 1px solid #e5e5e5;
     padding-top: 1rem;
     font-weight: 400;
     color: #4b6170;
+    @media screen and (max-width: 900px) {
+      width: 50%;
+    }
   }
   .bigger-text {
     display: flex;
@@ -49,6 +63,14 @@ const MainLeadSection = styled.div`
     position: relative;
     right: 1.8rem;
     top: 0.6rem;
+    /* width: 49;
+    height: 32; */
+    @media screen and (max-width: 900px) {
+      width: 2rem;
+      height: 1.3rem;
+      right: 1rem;
+      top: 0.3rem;
+    }
   }
 `;
 
@@ -62,8 +84,6 @@ export function MainSection(props: MainProps) {
         <Image
           className="asset-bigger-text"
           src={props.src}
-          width={49}
-          height={32}
           alt="asset-header"
         />
       </div>
