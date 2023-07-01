@@ -47,6 +47,9 @@ const Feedback = styled.div`
   }
   .top-right {
     border-bottom: 1px solid #e5e5e5;
+    @media screen and (max-width: 900px) {
+      text-align: center;
+    }
   }
   .middle-right {
     padding-top: 2rem;
