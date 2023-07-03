@@ -4,6 +4,7 @@ import seloTop10 from "src/public/selo_RD.png";
 import rating from "src/public/rating.webp";
 import lilCard from "src/public/no-card-dark.webp";
 
+// #e6f3ff
 type ComparationProps = {
   image: StaticImageData;
 };
@@ -13,6 +14,9 @@ const Feedback = styled.div`
   margin: 0 auto;
   align-items: center;
   justify-content: space-evenly;
+  background-color: #f0f8ff;
+  padding: 2rem;
+
   @media screen and (max-width: 900px) {
     flex-direction: column;
   }
@@ -36,6 +40,9 @@ const Feedback = styled.div`
     text-align: center;
     text-decoration: none;
     white-space: nowrap;
+    @media screen and (max-width: 900px) {
+      padding: 0.4rem 0.8rem;
+    }
   }
 
   aside {
@@ -55,14 +62,16 @@ const Feedback = styled.div`
     padding-top: 2rem;
     display: flex;
     align-items: center;
-  }
-  .selo {
-    margin-left: 1rem;
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+    }
   }
 `;
 
 const Observations = styled.div`
   display: flex;
+  @media screen and (max-width: 900px) {
+  }
 
   .card {
     border-right: 2px solid #4b6170;
@@ -83,10 +92,10 @@ const Observations = styled.div`
 export function Comparation(props: ComparationProps) {
   return (
     <Feedback>
-      <div>
+      <div className="mountain">
         <Image
           src={props.image}
-          style={{ width: "40vw", height: "fit-content" }}
+          style={{ width: "fit-content", height: "38vw" }}
           alt="comparativo"
         ></Image>
       </div>
@@ -106,12 +115,13 @@ export function Comparation(props: ComparationProps) {
             VER DEMONSTRAÇÃO
           </a>
           <Image
-            className="selo"
+            style={{
+              width: "fit-content",
+              height: "7.5vh",
+              margin: "1rem",
+            }}
             src={seloTop10}
             alt="selo-top-10"
-            style={{
-              height: "4rem",
-            }}
           />
         </div>
         <Observations>
@@ -121,11 +131,9 @@ export function Comparation(props: ComparationProps) {
               src={lilCard}
               alt="selo-top-10"
               style={{
-                width: "1rem",
-                height: "rem",
+                width: "fit-content",
+                height: "1rem",
               }}
-              width={16}
-              height={16}
             />
             Não é necessário Cartão de Crédito
           </h5>
@@ -135,7 +143,7 @@ export function Comparation(props: ComparationProps) {
               className="obs-assets"
               src={rating}
               alt="selo-top-10"
-              style={{ width: "3rem", height: "fit-content" }}
+              style={{ width: "fit-content", height: "0.5rem" }}
             />
             4.9/5 média de satisfação
           </h5>

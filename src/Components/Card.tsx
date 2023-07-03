@@ -1,11 +1,14 @@
 import styled from "styled-components";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import { ReactNode } from "react";
 
 type thumbProps = {
-  src: any;
-  width: number;
-  height: number;
+  src: StaticImageData;
   alt: string;
+  style: {
+    height: string;
+    width: string;
+  };
 };
 
 const LeadThumb = styled.div`
@@ -14,7 +17,7 @@ const LeadThumb = styled.div`
   background-color: white;
   margin: 1rem;
   flex-wrap: wrap;
-  width: min-content;
+  max-width: min-content;
   border-radius: 1rem;
   box-shadow: 1px 20px 10px #ccc;
   overflow: hidden;

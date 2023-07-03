@@ -65,7 +65,11 @@ export function Footer() {
   return (
     <LeadFooter>
       <Logo>
-        <Image src={LeadLogo} width={192} height={42} alt="logo" />
+        <Image
+          src={LeadLogo}
+          style={{ width: "10rem", height: "fit-content" }}
+          alt="logo"
+        />
         <h4>Transformando visitantes em clientes.</h4>
       </Logo>
       <table>

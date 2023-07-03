@@ -1,28 +1,89 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import styled from "styled-components";
 
-const Section = styled.div`
+type MainProps = {
+  src: StaticImageData;
+};
+
+const MainLeadSection = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   padding: 8rem 5rem;
-  height: 35vh;
-  background: #833434;
+  background: #f0f8ff;
+  text-align: center;
+  margin: 0 auto;
+
+  span {
+    background-color: white;
+    padding: 0.2rem 1.3rem;
+    border: 2px solid #2c83fb;
+    border-radius: 2rem 2rem 2rem 0;
+    color: #2c83fb;
+    font-weight: bold;
+    font-size: 0.8rem;
+    @media screen and (max-width: 900px) {
+      font-size: 0.6rem;
+    }
+  }
+  h1 {
+    margin-left: 2rem;
+    font-size: 5rem;
+    background: linear-gradient(to right, #2c83fb, #1f76f0);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    margin: 0;
+    @media screen and (max-width: 900px) {
+      font-size: 1.5rem;
+    }
+  }
+  h2 {
+    font-weight: 400;
+    font-size: 2.5rem;
+    margin: 0;
+    margin-top: 1rem;
+    color: #4b6170;
+    @media screen and (max-width: 900px) {
+      font-size: 1rem;
+    }
+  }
+  h3 {
+    border-top: 1px solid #e5e5e5;
+    padding-top: 1rem;
+    font-weight: 400;
+    color: #4b6170;
+    @media screen and (max-width: 900px) {
+      font-size: 0.8rem;
+    }
+  }
+  .bigger-text {
+    display: flex;
+  }
+  .asset-bigger-text {
+    position: relative;
+    right: 1.8rem;
+    top: 0.6rem;
+    /* width: 49;
+    height: 32; */
+    @media screen and (max-width: 900px) {
+      width: fit-content;
+      height: 0.7rem;
+      right: 0.5rem;
+      top: 0.1rem;
+    }
+  }
 `;
 
-export function Banner(props: any) {
+export function Banner(props: MainProps) {
   return (
-    <Section>
+    <MainLeadSection>
       <span>WEBINARS EXCLUSIVOS</span>
       <h2>Menos conversinha,</h2>
       <div className="bigger-text">
         <h1>Mais Conversão</h1>
         <Image
           className="asset-bigger-text"
-          src={props.asset}
-          width={49}
-          height={32}
+          src={props.src}
           alt="asset-header"
         />
       </div>
@@ -30,6 +91,6 @@ export function Banner(props: any) {
         Conheça as estratégias que <b>mudaram o jogo</b> e como aplicá-las no
         seu negócio
       </h3>
-    </Section>
+    </MainLeadSection>
   );
 }
