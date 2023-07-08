@@ -2,6 +2,12 @@ import styled from "styled-components";
 import Image from "next/image";
 import LeadLogo from "src/public/logo.png";
 import { Logo } from "./Logo";
+import {
+  TiSocialFacebookCircular,
+  TiSocialLinkedinCircular,
+  TiSocialInstagramCircular,
+} from "react-icons/ti";
+import { Colors, FooterColors } from "@/styles";
 
 const LeadFooter = styled.div`
   display: flex;
@@ -23,7 +29,7 @@ const LeadFooter = styled.div`
     flex-direction: column;
   }
   h3 {
-    color: #4b6170;
+    color: ${Colors.default};
     margin-bottom: 1.5rem;
   }
   ul {
@@ -35,12 +41,15 @@ const LeadFooter = styled.div`
   }
   ul li a {
     text-decoration: none;
-    color: #afafaf;
+    color: ${FooterColors.content};
   }
   ul li {
     margin-bottom: 1rem;
   }
-  .contato {
+  .contato li {
+    color: ${FooterColors.content};
+  }
+  .contato b {
   }
   footer {
     border-top: 1px solid #e5e5e5;
@@ -53,12 +62,16 @@ const LeadFooter = styled.div`
   }
   h4 {
     font-weight: 500;
-    color: #afafaf;
+    color: ${FooterColors.content};
   }
   a {
     text-decoration: none;
-    color: #00c3ff;
+    color: ${FooterColors.link};
   }
+`;
+const Networks = styled.div`
+  display: flex;
+  margin-bottom: 1rem;
 `;
 
 export function Footer() {
@@ -67,7 +80,7 @@ export function Footer() {
       <Logo>
         <Image
           src={LeadLogo}
-          style={{ width: "10rem", height: "fit-content" }}
+          style={{ width: "auto", height: "2.25rem" }}
           alt="logo"
         />
         <h4>Transformando visitantes em clientes.</h4>
@@ -130,15 +143,36 @@ export function Footer() {
 
         <div>
           <h3>Siga a Leadster</h3>
+
           <ul className="contato">
-            <>
-              <b>E-mail:</b>
-              <li>contato@leadster.com.br</li>
-            </>
-            <>
-              <b>Telefone:</b>
-              <li>(42)98828-9851</li>
-            </>
+            <Networks>
+              <TiSocialLinkedinCircular
+                style={{
+                  height: "4.8vh",
+                  width: "auto",
+                  color: `${Colors.default}`,
+                }}
+              />
+              <TiSocialFacebookCircular
+                style={{
+                  height: "4.8vh",
+                  width: "auto",
+                  color: `${Colors.default}`,
+                }}
+              />
+              <TiSocialInstagramCircular
+                style={{
+                  height: "4.8vh",
+                  width: "auto",
+                  color: `${Colors.default}`,
+                }}
+              />
+            </Networks>
+            <>E-mail:</>
+            <li>contato@leadster.com.br</li>
+
+            <>Telefone:</>
+            <li>(42)98828-9851</li>
           </ul>
         </div>
       </table>

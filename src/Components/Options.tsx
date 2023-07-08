@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { AnimButton } from "./AnimButton";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { Colors } from "@/styles";
 
 const Jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -25,14 +26,14 @@ const StyledOptions = styled.div`
     padding-right: 2rem !important;
     padding: 0.5rem 0.7rem;
     border-radius: 0.6rem;
-    border-color: #4b6170;
+    border-color: ${Colors.default};
     font-weight: 600;
-    color: #4b6170;
+    color: ${Colors.default};
   }
   label {
     margin-right: 0.5rem;
     font-weight: 600;
-    color: #4b6170;
+    color: ${Colors.default};
     @media screen and (max-width: 1280px) {
       display: none;
     }
@@ -45,13 +46,13 @@ const Filter = styled.div`
 
 const Types = styled.div`
   float: left;
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: 1360px) {
     display: none;
   }
 `;
 
 const MobileFilter = styled.div`
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1360px) {
     display: none;
     float: left;
   }

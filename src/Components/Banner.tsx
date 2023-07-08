@@ -1,5 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import styled from "styled-components";
+import { Colors } from "../styles/index";
+import { ReactNode } from "react";
 
 type MainProps = {
   src: StaticImageData;
@@ -17,9 +19,9 @@ const MainLeadSection = styled.div`
   span {
     background-color: white;
     padding: 0.2rem 1.3rem;
-    border: 2px solid #2c83fb;
+    border: 2px solid ${Colors.lighterBlue};
     border-radius: 2rem 2rem 2rem 0;
-    color: #2c83fb;
+    color: ${Colors.lighterBlue};
     font-weight: bold;
     font-size: 0.8rem;
     @media screen and (max-width: 900px) {
@@ -29,7 +31,11 @@ const MainLeadSection = styled.div`
   h1 {
     margin-left: 2rem;
     font-size: 5rem;
-    background: linear-gradient(to right, #2c83fb, #1f76f0);
+    background: linear-gradient(
+      to right,
+      ${Colors.lighterBlue},
+      ${Colors.darkerBlue}
+    );
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     margin: 0;
@@ -42,7 +48,7 @@ const MainLeadSection = styled.div`
     font-size: 2.5rem;
     margin: 0;
     margin-top: 1rem;
-    color: #4b6170;
+    color: ${Colors.default};
     @media screen and (max-width: 900px) {
       font-size: 1rem;
     }
@@ -51,7 +57,7 @@ const MainLeadSection = styled.div`
     border-top: 1px solid #e5e5e5;
     padding-top: 1rem;
     font-weight: 400;
-    color: #4b6170;
+    color: ${Colors.default};
     @media screen and (max-width: 900px) {
       font-size: 0.8rem;
     }
@@ -63,8 +69,6 @@ const MainLeadSection = styled.div`
     position: relative;
     right: 1.8rem;
     top: 0.6rem;
-    /* width: 49;
-    height: 32; */
     @media screen and (max-width: 900px) {
       width: fit-content;
       height: 0.7rem;

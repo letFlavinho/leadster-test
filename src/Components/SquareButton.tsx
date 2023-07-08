@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Plus_Jakarta_Sans } from "next/font/google";
+import { Colors } from "@/styles";
 
 const Jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -11,7 +12,7 @@ type ButtonType = {
 };
 
 const SquaredButton = styled.button<ButtonType>`
-  border: 1px solid #4b6170;
+  border: 1px solid ${Colors.default};
   border-radius: 0.3rem;
   background-color: ${(props) =>
     props.backgroundColor ? props.backgroundColor : "white"};
@@ -21,11 +22,11 @@ const SquaredButton = styled.button<ButtonType>`
   font-weight: 600;
   vertical-align: middle;
   :hover {
-    color: #2c83fb;
-    border-color: #2c83fb;
+    color: ${Colors.lighterBlue};
+    border-color: ${Colors.lighterBlue};
   }
   :active {
-    background-color: #2c83fb;
+    background-color: ${Colors.lighterBlue};
     color: white;
   }
 `;

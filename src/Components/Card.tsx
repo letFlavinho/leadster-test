@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Image, { StaticImageData } from "next/image";
-import { ReactNode } from "react";
 
 type thumbProps = {
   src: StaticImageData;
@@ -9,6 +8,7 @@ type thumbProps = {
     height: string;
     width: string;
   };
+  openModal: any;
 };
 
 const LeadThumb = styled.div`
@@ -23,12 +23,13 @@ const LeadThumb = styled.div`
   overflow: hidden;
   b {
     margin: 1rem;
+    color: #1c3c50;
   }
 `;
 
 export function Card(props: thumbProps) {
   return (
-    <LeadThumb>
+    <LeadThumb onClick={props.openModal}>
       <Image className="Image" src={props.src} alt={props.alt} />
       <b>Como aumentar sua Geração de Leads feat. Traktor</b>
     </LeadThumb>

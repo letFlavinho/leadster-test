@@ -16,20 +16,22 @@ const Feedback = styled.div`
   justify-content: space-evenly;
   background-color: #f0f8ff;
   padding: 2rem;
-
   @media screen and (max-width: 900px) {
     flex-direction: column;
   }
   h1 {
     color: #4b6170;
     font-weight: 400;
-    @media screen and (max-width: 900px) {
-      font-size: 1rem;
+    @media screen and (max-width: 1280px) {
+      font-size: 1.2rem;
     }
   }
   h3 {
     color: #4b6170;
     font-weight: 400;
+    @media screen and (max-width: 1280px) {
+      font-size: 0.9rem;
+    }
   }
   a {
     background-color: #2c83fb;
@@ -59,25 +61,39 @@ const Feedback = styled.div`
     }
   }
   .middle-right {
-    padding-top: 2rem;
     display: flex;
     align-items: center;
+
     @media screen and (max-width: 900px) {
       flex-direction: column;
+      padding-top: 1.5rem;
     }
+  }
+
+  .mountain {
+    background: black;
+    border-radius: 2rem;
+    bottom: 2rem;
+    transform: rotate(45deg);
   }
 `;
 
 const Observations = styled.div`
   display: flex;
+
   @media screen and (max-width: 900px) {
+    flex-direction: column;
   }
 
   .card {
-    border-right: 2px solid #4b6170;
+    @media screen and (min-width: 900px) {
+      border-right: 2px solid #4b6170;
+    }
   }
   .rating {
-    padding-left: 0.8rem;
+    @media screen and (min-width: 900px) {
+      padding-left: 0.8rem;
+    }
   }
   h5 {
     text-align: center;
@@ -91,64 +107,68 @@ const Observations = styled.div`
 
 export function Comparation(props: ComparationProps) {
   return (
-    <Feedback>
-      <div className="mountain">
+    <>
+      <Feedback>
         <Image
           src={props.image}
-          style={{ width: "fit-content", height: "38vw" }}
+          style={{ width: "auto", height: "38vw" }}
           alt="comparativo"
         ></Image>
-      </div>
 
-      <aside>
-        <div className="top-right">
-          <h1>
-            Pronto para triplicar sua <b>Geração de Leads?</b>
-          </h1>
-          <h3>Criação e ativação em 4 minutos</h3>
-        </div>
-        <div className="middle-right">
-          <a
-            target="_blank"
-            href="https://www.w3schools.com/css/css3_buttons.asp"
-          >
-            VER DEMONSTRAÇÃO
-          </a>
-          <Image
-            style={{
-              width: "fit-content",
-              height: "7.5vh",
-              margin: "1rem",
-            }}
-            src={seloTop10}
-            alt="selo-top-10"
-          />
-        </div>
-        <Observations>
-          <h5 className="card">
+        <aside>
+          <div className="top-right">
+            <h1>
+              Pronto para triplicar sua <b>Geração de Leads?</b>
+            </h1>
+            <h3>Criação e ativação em 4 minutos</h3>
+          </div>
+          <div className="middle-right">
+            <a
+              target="_blank"
+              href="https://www.w3schools.com/css/css3_buttons.asp"
+            >
+              VER DEMONSTRAÇÃO
+            </a>
             <Image
-              className="obs-assets"
-              src={lilCard}
-              alt="selo-top-10"
               style={{
-                width: "fit-content",
-                height: "1rem",
+                width: "auto",
+                height: "7.5vh",
+                margin: "1rem",
               }}
-            />
-            Não é necessário Cartão de Crédito
-          </h5>
-
-          <h5 className="rating">
-            <Image
-              className="obs-assets"
-              src={rating}
+              src={seloTop10}
               alt="selo-top-10"
-              style={{ width: "fit-content", height: "0.5rem" }}
             />
-            4.9/5 média de satisfação
-          </h5>
-        </Observations>
-      </aside>
-    </Feedback>
+          </div>
+          <Observations>
+            <h5 className="card">
+              <Image
+                className="obs-assets"
+                src={lilCard}
+                alt="selo-top-10"
+                style={{
+                  width: "auto",
+                  height: "1.5vh",
+                }}
+              />
+              Não é necessário Cartão de Crédito
+            </h5>
+
+            <h5 className="rating">
+              <Image
+                className="obs-assets"
+                src={rating}
+                alt="selo-top-10"
+                style={{
+                  width: "auto",
+                  height: "1.2vh",
+                }}
+              />
+              4.9/5 média de satisfação
+            </h5>
+          </Observations>
+        </aside>
+      </Feedback>
+      {/* <div className="mountain">kçnjsd</div> */}
+    </>
   );
 }
