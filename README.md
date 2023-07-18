@@ -29,4 +29,5 @@ Precisei importar a fonte Jakarta Sans Plus por fora com uma lib, mais rápido, 
      <tag className={Jakarta.className}></tag>
 ```
 
-Dessa forma tudo o que estava dentro da tag importava a fonte.
+Dessa forma tudo o que estava dentro da tag importava a fonte. Depois foi só codada violenta, fiz tudo para caber numa tela de mais de 900px e um estilo diferente para se enquadrar em telas menores, através dos media queries dentro dos próprios componentes estilizados. Styled-Components é bem intuitivo, depois de separar os componentes, eu já sabia quais eram as cores pois fiz tudo sem design system, só no final eu fiz um design system com cores padronizadas, após eu saber quais eram as cores, na minha opinião não foi a melhor opção, não tem motivo bom para criar as variáveis de cores depois, em próximos projetos vou optar por fazer antes, mas agora que eu sei bem como fazer, vou optar sempre por fazer antes.
+Na pasta styles, se encontram essas cores padronizadas para toda aplicação.

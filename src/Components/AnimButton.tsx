@@ -21,6 +21,7 @@ const LeadButton = styled.button<ButtonType>`
   text-align: center;
   font-weight: 600;
   color: ${Colors.default};
+  cursor: pointer;
   :hover {
     color: ${Colors.lighterBlue};
     border-color: ${Colors.lighterBlue};

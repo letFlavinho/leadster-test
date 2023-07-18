@@ -21,6 +21,7 @@ const LeadThumb = styled.div`
   border-radius: 1rem;
   box-shadow: 1px 20px 10px #ccc;
   overflow: hidden;
+  cursor: pointer;
   b {
     margin: 1rem;
     color: #1c3c50;

@@ -11,21 +11,33 @@ export const Colors = <ColorsProps>{
 };
 
 type FileColorsProps = {
+  outlineGreen: string;
   green: string;
   lightGreen: string;
+  outlineBlue: string;
   blue: string;
   lightBlue: string;
+  outlineYellow: string;
   yellow: string;
   lightYellow: string;
+  outlineGray: string;
+  gray: string;
+  lightGray: string;
 };
 
 export const FileColors = <FileColorsProps>{
+  outlineGreen: "#2bc099",
   green: "#9fefdf",
-  lightGreen: "#00b489",
-  blue: "#78c9fc",
-  lightBlue: "#148bf0",
-  yellow: "#bea841",
-  lightYellow: "#bea73f",
+  lightGreen: "#c2f4ea",
+  outlineBlue: "#2c8ff0",
+  blue: "#a1d9ff",
+  lightBlue: "#c2e6ff",
+  outlineYellow: "#bea940",
+  yellow: "#fff1a0",
+  lightYellow: "#fff8d0",
+  outlineGray: "#8f9da5",
+  gray: "#d0dee7",
+  lightGray: "#e8eef3",
 };
 
 type FooterProps = {

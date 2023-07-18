@@ -8,7 +8,7 @@ const Jakarta = Plus_Jakarta_Sans({
 });
 type ButtonType = {
   product: string | number;
-  backgroundColor: any;
+  backgroundColor: string;
 };
 
 const SquaredButton = styled.button<ButtonType>`
@@ -21,6 +21,7 @@ const SquaredButton = styled.button<ButtonType>`
   text-align: center;
   font-weight: 600;
   vertical-align: middle;
+  cursor: pointer;
   :hover {
     color: ${Colors.lighterBlue};
     border-color: ${Colors.lighterBlue};

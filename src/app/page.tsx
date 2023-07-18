@@ -15,7 +15,7 @@ import { Options } from "@/Components/Options";
 import { Loading } from "@/Components/Loading";
 import { Banner } from "@/Components/Banner";
 import { useState } from "react";
-import { ModalComponent } from "../Components/VideoModal";
+import { VideoModal } from "../Components/VideoModal";
 import Modal from "react-modal";
 import { Colors } from "@/styles";
 
@@ -33,14 +33,16 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
     
   }
-  .modal-content{
+  .modal-content{ 
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  height: 100vh;
+  height: 100%;
   background-color: rgba(31,118, 240, 0.25);
 }
 `;
@@ -154,7 +156,7 @@ export default function Home() {
             className="modal-content"
             ariaHideApp={false}
           >
-            <ModalComponent close={() => setIsOpen(false)} />
+            <VideoModal close={() => setIsOpen(false)} />
           </Modal>
           {/* <Modal
             isOpen={isOpen}
