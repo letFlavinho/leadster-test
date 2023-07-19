@@ -40,7 +40,7 @@ const Section = styled.div`
   }
 
   .close-btn {
-    height: 1.5em;
+    height: 1em;
     width: fit-content;
     position: relative;
     float: right;
@@ -50,8 +50,8 @@ const Section = styled.div`
   .description {
     padding: 2rem;
     @media screen and (max-width: 768px) {
-      font-size: 0.7em;
-      padding: 1rem;
+      font-size: 0.5em;
+      padding: 1em;
     }
   }
   main h2 {
@@ -60,24 +60,27 @@ const Section = styled.div`
     padding: 1.5em;
     width: 70%;
     @media screen and (max-width: 768px) {
-      font-size: 1rem;
+      font-size: 0.5em;
       padding: 2em 0;
     }
   }
   h3 {
     border-bottom: 0.1rem solid gray;
     padding-bottom: 0.5rem;
+    @media screen and (max-width: 768px) {
+      font-size: 0.6rem;
+    }
   }
   .downloads {
     justify-content: space-between;
   }
 
-  .play {
-  }
   .play iframe {
     border: none;
     width: 100%;
     margin: 0;
+    @media screen and (min-width: 1280px) {
+    }
   }
   p {
     @media screen and (min-width: 1280px) {
@@ -118,8 +121,8 @@ const DownloadButton = styled.button<ButtonType>`
     font-size: 0.7rem;
   }
   @media screen and (max-width: 768px) {
-    height: 3em;
-    font-size: 1em;
+    height: 1.3rem;
+    font-size: 0.5rem;
   }
 
   .cloud-icon {
