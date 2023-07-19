@@ -61,6 +61,7 @@ const Section = styled.div`
     width: 70%;
     @media screen and (max-width: 768px) {
       font-size: 0.7rem;
+      padding: 3em 0;
     }
   }
   h3 {
