@@ -92,7 +92,7 @@ export function Banner(props: MainProps) {
       </div>
       <h3>
         Conheça as estratégias que <b>mudaram o jogo</b> e como aplicá-las no
-        seu negócio
+        seu negócião
       </h3>
     </MainLeadSection>
   );
