@@ -1,7 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import styled from "styled-components";
 import { Colors } from "../styles/index";
-import { ReactNode } from "react";
 
 type MainProps = {
   src: StaticImageData;
