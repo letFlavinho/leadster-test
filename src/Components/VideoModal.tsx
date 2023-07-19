@@ -40,7 +40,7 @@ const Section = styled.div`
   }
 
   .close-btn {
-    height: 1em;
+    height: 1.5em;
     width: fit-content;
     position: relative;
     float: right;
@@ -50,18 +50,18 @@ const Section = styled.div`
   .description {
     padding: 2rem;
     @media screen and (max-width: 768px) {
-      font-size: 0.5em;
+      font-size: 0.7em;
       padding: 1rem;
     }
   }
   main h2 {
     text-align: center;
     margin: 0 auto;
-    padding-bottom: 1rem;
+    padding: 1.5em;
     width: 70%;
     @media screen and (max-width: 768px) {
-      font-size: 0.7rem;
-      padding: 3em 0;
+      font-size: 1rem;
+      padding: 2em 0;
     }
   }
   h3 {
